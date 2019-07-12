@@ -48,7 +48,7 @@ function App() {
         <div className="timer-btns-container">
           <TimerButton color="green" isVisible={!timerRunning} text="Start" onClick={startTimerFnc} />
           <TimerButton color="red" isVisible={timerRunning} text="Stop" onClick={stopTimerFnc} />
-          {/*<TimerButton color="yellow" isVisible="true" text="Lap" onClick={lapTimerFnc} />*/}
+          <TimerButton color="yellow" isVisible="true" text="Lap" onClick={lapTimerFnc} />
           <TimerButton color="blue" isVisible="true" text="Reset" onClick={resetTimerFnc} />
         </div>
       </section>
