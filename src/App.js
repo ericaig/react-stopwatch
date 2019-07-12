@@ -3,6 +3,7 @@ import './App.scss';
 
 import Timer from './components/Timer/index';
 import TimerButton from './components/TimerButton/index';
+import LapTimes from './components/LapTimes/index';
 
 function App() {
   const [timerRunning, setTimerRunning] = useState(false);
@@ -51,6 +52,10 @@ function App() {
           <TimerButton color="yellow" isVisible="true" text="Lap" onClick={lapTimerFnc} />
           <TimerButton color="blue" isVisible="true" text="Reset" onClick={resetTimerFnc} />
         </div>
+      </section>
+
+      <section>
+        <LapTimes/>
       </section>
     </div>
   ) 
