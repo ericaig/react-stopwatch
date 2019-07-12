@@ -1,0 +1,43 @@
+.display-none{display: none !important;}
+
+.timer-button{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    //border: 20px double;
+    
+
+    &.green{
+        background-color: #58D68D;
+        -webkit-box-shadow: 0px 0px 30px -17px rgba(88,214,141,1);
+        -moz-box-shadow: 0px 0px 30px -17px rgba(88,214,141,1);
+        box-shadow: 0px 0px 30px -17px rgba(88,214,141,1);
+    }
+    &.blue{
+        background-color: #5DADE2;
+        -webkit-box-shadow: 0px 0px 30px -17px rgba(52,152,219,1);
+        -moz-box-shadow: 0px 0px 30px -17px rgba(52,152,219,1);
+        box-shadow: 0px 0px 30px -17px rgba(52,152,219,1);
+    }
+    &.yellow{
+        background-color: #ffc107;
+        -webkit-box-shadow: 0px 0px 30px -17px rgba(255,193,7,1);
+        -moz-box-shadow: 0px 0px 30px -17px rgba(255,193,7,1);
+        box-shadow: 0px 0px 30px -17px rgba(255,193,7,1);
+    }
+
+    &.red{
+        background-color: #CD6155;
+        -webkit-box-shadow: 0px 0px 30px -17px rgba(205,97,85,1);
+        -moz-box-shadow: 0px 0px 30px -17px rgba(205,97,85,1);
+        box-shadow: 0px 0px 30px -17px rgba(205,97,85,1);
+    }
+}
