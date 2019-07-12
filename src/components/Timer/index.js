@@ -91,16 +91,31 @@ class Timer extends React.Component{
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.timerRunning){
-            clearInterval(this.interval);
-            this.interval = setInterval(this.tick, this.state.delay);
+        if (this.props.resetTimer) {
+            this.props.resetTimerCallback();
+            this.setState({
+                hour: 0,
+                minute: 0,
+                second: 0,
+                millisecond: 0,
+            });
+            this.resetInterval();
         }else{
-            clearInterval(this.interval);
+            if (this.props.timerRunning) {
+                this.resetInterval();
+                this.interval = setInterval(this.tick, this.state.delay);
+            } else {
+                this.resetInterval();
+            }
         }
     }
 
     componentWillUnmount() {
-        clearInterval(this.interval);
+        this.resetInterval();
+    }
+
+    resetInterval(){
+        if (!!this.interval) clearInterval(this.interval);
     }
 
     tick = () => {

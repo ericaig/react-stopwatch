@@ -6,23 +6,30 @@ import TimerButton from './components/TimerButton/index';
 
 function App() {
   const [timerRunning, setTimerRunning] = useState(false);
+  const [resetTimer, setResetTimer] = useState(false);
 
-  const startTimer = () =>{
+  const startTimerFnc = () =>{
     setTimerRunning(true)
 
   }
 
-  const stopTimer = () =>{
+  const stopTimerFnc = () =>{
     setTimerRunning(false)
   }
 
-  const lapTimer = () => {
+  const lapTimerFnc = () => {
     console.log("lapTimer")
   }
 
-  const resetTimer = () => {
+  const resetTimerFnc = () => {
     console.log("resetTimer")
+    setResetTimer(true)
   }
+
+  const resetTimerCallback = ()=>{
+    stopTimerFnc();
+    setResetTimer(false);
+  };
 
   return (
     <div className="App">
@@ -36,13 +43,13 @@ function App() {
       <section>
         {/*{timerRunning && <Timer timerRunning={timerRunning} />}*/}
 
-        <Timer timerRunning={timerRunning} />
+        <Timer timerRunning={timerRunning} resetTimer={resetTimer} resetTimerCallback={resetTimerCallback} />
 
         <div className="timer-btns-container">
-          <TimerButton color="green" isVisible={!timerRunning} text="Start" onClick={startTimer} />
-          <TimerButton color="red" isVisible={timerRunning} text="Stop" onClick={stopTimer} />
-          {/*<TimerButton color="yellow" isVisible="true" text="Lap" onClick={lapTimer} />*/}
-          <TimerButton color="blue" isVisible="true" text="Reset" onClick={resetTimer} />
+          <TimerButton color="green" isVisible={!timerRunning} text="Start" onClick={startTimerFnc} />
+          <TimerButton color="red" isVisible={timerRunning} text="Stop" onClick={stopTimerFnc} />
+          {/*<TimerButton color="yellow" isVisible="true" text="Lap" onClick={lapTimerFnc} />*/}
+          <TimerButton color="blue" isVisible="true" text="Reset" onClick={resetTimerFnc} />
         </div>
       </section>
     </div>
