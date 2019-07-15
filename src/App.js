@@ -54,9 +54,13 @@ function App() {
         </div>
       </section>
 
-      <section>
-        <LapTimes/>
-      </section>
+      <div className="row center-md laptimes-container">
+        <div className="col-md-6">
+          <div className="box laptimes-list">
+            <LapTimes />
+          </div>
+        </div>
+      </div>
     </div>
   ) 
 }

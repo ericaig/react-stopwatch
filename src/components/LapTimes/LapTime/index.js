@@ -3,9 +3,12 @@ import '../../../components/LapTimes/LapTime/index.scss';
 
 class LapTime extends React.Component {
 
+
     render() {
         return (
-            <div className="lap-time-item">lap time item</div>
+            <li className="lap-time-item">
+                00:01.03
+            </li>
         )
     }
 }

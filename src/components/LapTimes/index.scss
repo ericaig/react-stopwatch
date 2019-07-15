@@ -1,0 +1,12 @@
+.lap-times{
+    font-size: 1.2em;
+    list-style: none;
+
+    li{        
+        &::before {
+            padding-right: .8em;
+            content: "#";
+            color: rgb(214, 214, 214);
+        }
+    }
+}

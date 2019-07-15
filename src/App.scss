@@ -1,3 +1,5 @@
+@import "~flexboxgrid/dist/flexboxgrid.min.css";
+
 body {
   margin: 0;
   padding: 0;
@@ -32,4 +34,14 @@ code {
   margin-top: 2em;
   background-color:#fff;
   padding: 1em;
+}
+
+.laptimes-container{
+  margin-top: .2em;
+
+  .laptimes-list{
+    background-color: #fff;
+    padding: 1.2em;
+    text-align: left;
+  }
 }
