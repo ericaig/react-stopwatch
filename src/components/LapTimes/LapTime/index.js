@@ -7,7 +7,9 @@ class LapTime extends React.Component {
     render() {
         return (
             <li className="lap-time-item">
-                00:01.03
+                {this.props.lap.time}
+                {this.props.lap.isFastest && <span className="time-def fastest-time">&nbsp;(Fastest)</span>}
+                {this.props.lap.isSlowest && <span className="time-def slowest-time">&nbsp;(Slowest)</span>}
             </li>
         )
     }
