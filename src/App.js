@@ -8,6 +8,7 @@ import LapTimes from './components/LapTimes/index';
 function App() {
   const [timerRunning, setTimerRunning] = useState(false);
   const [resetTimer, setResetTimer] = useState(false);
+  const [newLapTime, setNewLapTime] = useState(false);
 
   const startTimerFnc = () =>{
     setTimerRunning(true)
@@ -19,12 +20,17 @@ function App() {
   }
 
   const lapTimerFnc = () => {
-    console.log("lapTimer")
+    if(timerRunning) setNewLapTime(true)
+    else console.log("Lap time can only be set when timer is running...")
   }
 
+  const setNewLapTimeCallback = () => {
+    setNewLapTime(false)
+  }  
+
   const resetTimerFnc = () => {
-    console.log("resetTimer")
-    setResetTimer(true)
+    if (timerRunning) setResetTimer(true)
+    else console.log("Timer can only be reset when timer is running...")
   }
 
   const resetTimerCallback = ()=>{
@@ -57,7 +63,8 @@ function App() {
       <div className="row center-md laptimes-container">
         <div className="col-md-6">
           <div className="box laptimes-list">
-            <LapTimes />
+            <h4>Laps</h4>
+            <LapTimes timerRunning={timerRunning} resetTimer={resetTimer} setNewLapTimeCallback={setNewLapTimeCallback} newLapTime={newLapTime} />
           </div>
         </div>
       </div>
