@@ -122,9 +122,9 @@ class LapTimes extends React.Component {
      */
     calculateTotal(item){
         let total = 0;
-        if (item.hour) total += item.hour * 3600;
-        if (item.minute) total += item.minute * 60;
-        if (item.second) total += item.second;
+        if (item.hour) total += item.hour * 3600000;
+        if (item.minute) total += item.minute * 6000;
+        if (item.second) total += item.second * 1000;
         if (item.millisecond) total += item.millisecond;
 
         item.total = total
@@ -139,6 +139,9 @@ class LapTimes extends React.Component {
 
 
         this.state.items.forEach(item=>{
+            item.isFastest = false;
+            item.isSlowest = false;
+
             if(cur_min === -1 || cur_min > item.total){
                 cur_min = item.total;
             }
@@ -161,7 +164,7 @@ class LapTimes extends React.Component {
         lastItem = this.updateItemTimes(lastItem)
         //lastItem = this.calculateTotal(lastItem)
 
-        console.log("lastItem", lastItem)
+        //console.log("lastItem", lastItem)
 
         //https://stackoverflow.com/a/35174579
         let stateCopy = Object.assign({}, this.state);

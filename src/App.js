@@ -28,9 +28,8 @@ function App() {
     setNewLapTime(false)
   }  
 
-  const resetTimerFnc = () => {
-    if (timerRunning) setResetTimer(true)
-    else console.log("Timer can only be reset when timer is running...")
+  const resetTimerFnc = () => { 
+    setResetTimer(true)
   }
 
   const resetTimerCallback = ()=>{
